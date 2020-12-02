@@ -1,4 +1,4 @@
-# vue-bigview-example
+# vue-bigview-base
 
 ## Project setup
 ```
