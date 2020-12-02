@@ -1,0 +1,7 @@
+@function vw($width) {
+  @return ($width/1920px)*100 + vw;
+}
+
+@function vh($height) {
+  @return ($height/1080px)*100 + vh;
+}
