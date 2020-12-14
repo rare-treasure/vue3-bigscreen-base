@@ -1,0 +1,4 @@
+src/assets/
+src/mock
+public
+src/*.d.ts

@@ -2,7 +2,7 @@ import { App } from 'vue';
 import { uniqueId } from 'lodash-es';
 import $echarts from 'echarts';
 
-import './svg-icon'
+import './svg-icon';
 
 declare module "@vue/runtime-core" {
   export interface ComponentCustomProperties {

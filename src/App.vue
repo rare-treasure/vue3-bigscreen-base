@@ -1,16 +1,16 @@
 <template>
-  <Layout></Layout>
+  <div class="layout">
+    <router-view></router-view>
+
+    <map-chart></map-chart>
+  </div>
 </template>
 
 <script lang="ts">
-import Layout from './views/Layout.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  components: {
-    Layout
-  }
 });
 </script>
 

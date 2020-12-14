@@ -10,8 +10,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
+  // history 模式需要 nginx 或 后端进行相应配置
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
-export default router
+export default router;

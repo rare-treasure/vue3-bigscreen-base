@@ -1,5 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const styleVariables = require('./src/utils/variables.ts');
+
 const publicPath = './';
 
 module.exports = {
@@ -8,16 +11,19 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        prependData: `
-          @import "@/assets/scss/_base.scss";
-        `
+        prependData: Object.keys(styleVariables)
+          // eslint-disable-next-line no-useless-escape
+          .map(k => `\$${k}: ${styleVariables[k]};`)
+          .join('\n') + `
+            @import "@/assets/scss/_base.scss";
+          `
       }
     }
   },
   pages: {
     index: {
       entry: 'src/main.ts',
-      title: '大屏示例',
+      title: process.env.VUE_APP_NAME,
     }
   },
   chainWebpack: config => {
@@ -46,4 +52,7 @@ module.exports = {
       .loader('file-loader');
   },
   transpileDependencies: ['element-plus/src', 'element-plus/packages'],
+  devServer: {
+    historyApiFallback: true
+  }
 };

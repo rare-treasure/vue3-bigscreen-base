@@ -1,13 +1,4 @@
-const plugins = [
-  [
-    'component',
-    {
-      'libraryName': 'element-plus',
-      'styleLibraryName': 'theme-chalk'
-    }
-  ],
-  '@vue/babel-plugin-jsx'
-];
+const plugins = [];
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push(['transform-remove-console', { 
